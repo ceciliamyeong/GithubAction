@@ -19,7 +19,7 @@ jobs:
     - name: Commit files
       run: |
         git config --local user.email "economad1@gmail.com"
-        git config --local user.name "ceciliamyeong"
+        git config --local user.name "economad1"
         git add .
         git commit -m "Run crawler and update current data"
     - name: Push changes
