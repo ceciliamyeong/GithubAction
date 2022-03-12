@@ -16,5 +16,14 @@ jobs:
       run: pip install -r requirements.txt
     - name: 3. 파이썬 실행
       run: python test.py
-    - name: GitHub Push
-      uses: ad-m/github-push-action@v0.6.0
+    - name: Commit files
+      run: |
+        git config --local user.email "paullabkorea@gmail.com"
+        git config --local user.name "paullabkorea"
+        git add .
+        git commit -m "Run crawler and update current data"
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        # branch: "master"
+        github_token: ${{ secrets.GITHUB_TOKEN }}
